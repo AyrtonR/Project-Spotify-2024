@@ -22,7 +22,7 @@ app.use(session({
 }));
 app.use(passportInitialize);
 app.use(passportSession);
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
+app.use(express.static(path.join(__dirname, 'docs'))); // Serve static files
 
 // Use routes
 app.use(authRoutes);
@@ -30,12 +30,12 @@ app.use(spotifyRoutes);
 
 // Home route
 app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/home.html'));
+  res.sendFile(path.join(__dirname, 'docs/home.html'));
 });
 
 // Root route
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/home.html')); // Serve the same content as /home
+  res.sendFile(path.join(__dirname, 'docs/home.html')); // Serve the same content as /home
 });
 
 // Start server
