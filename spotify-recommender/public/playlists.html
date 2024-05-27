@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playlists</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    nav { margin-bottom: 20px; }
+    nav a { margin-right: 10px; text-decoration: none; }
+    .playlist { cursor: not-allowed; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="recommendations.html">Recommendations</a>
+    <a href="liked-songs.html">Liked Songs</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+  <h1>My Playlists</h1>
+  <div id="playlists"></div>
+  <script>
+    async function fetchPlaylists() {
+      const response = await fetch('/playlists');
+      if (response.ok) {
+        const playlists = await response.json();
+        const playlistsDiv = document.getElementById('playlists');
+
+        playlists.forEach(playlist => {
+          const playlistDiv = document.createElement('div');
+          playlistDiv.className = 'playlist';
+          playlistDiv.innerHTML = `
+            <h3>${playlist.name}</h3>
+            <p>${playlist.tracks.total} tracks</p>
+          `;
+          playlistsDiv.appendChild(playlistDiv);
+        });
+      } else {
+        console.error('Failed to fetch playlists');
+      }
+    }
+
+    fetchPlaylists();
+  </script>
+</body>
+</html>

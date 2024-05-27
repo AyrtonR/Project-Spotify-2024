@@ -1,0 +1,24 @@
+{
+  "name": "project-spotify-2024",
+  "version": "1.0.0",
+  "description": "Project-Spotify-2024\r This is a project where I am going to be using the Spotify API to gather information about the kind of music I like listening to and then use machine learning to recommend me\r new songs and artists that I may enjoy.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.4.0",
+    "passport": "^0.7.0",
+    "passport-spotify": "^2.0.0",
+    "querystring": "^0.2.1"
+  }
+}
