@@ -4,7 +4,9 @@
   "description": "Project-Spotify-2024\r This is a project where I am going to be using the Spotify API to gather information about the kind of music I like listening to and then use machine learning to recommend me\r new songs and artists that I may enjoy.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +18,11 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
-    "mongoose": "^8.4.0",
     "passport": "^0.7.0",
     "passport-spotify": "^2.0.0",
     "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
