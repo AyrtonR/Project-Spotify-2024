@@ -3,21 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/liked-songs.css">
   <title>Liked Songs</title>
-  <style>
-    body { font-family: Arial, sans-serif; }
-    nav { margin-bottom: 20px; }
-    nav a { margin-right: 10px; text-decoration: none; }
-    .track { margin-bottom: 20px; }
-    .track img { height: 50px; }
-  </style>
 </head>
 <body>
   <nav>
     <a href="recommendations.html">Recommendations</a>
-    <a href="playlists.html">Playlists</a>
     <a href="profile.html">Profile</a>
+    <a href="index.html">Logout</a>
   </nav>
+  <div class="container">
   <h1>Liked Songs</h1>
   <div id="liked-songs"></div>
   <script>
@@ -34,7 +30,7 @@
           trackDiv.innerHTML = `
             <img src="${track.album.images[0].url}" alt="${track.name}">
             <p>${track.name} by ${track.artists.map(artist => artist.name).join(', ')}</p>
-            <button onclick="playSong('${track.id}')">Play</button>
+            <button class="button" onclick="playSong('${track.id}')">Play</button>
           `;
           likedSongsDiv.appendChild(trackDiv);
         });

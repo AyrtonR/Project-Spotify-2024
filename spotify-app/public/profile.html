@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
-  <style>
-    body { font-family: Arial, sans-serif; }
-    nav { margin-bottom: 20px; }
-    nav a { margin-right: 10px; text-decoration: none; }
-    .profile { text-align: right; }
-  </style>
+  <title>Profile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
   <nav>
     <a href="recommendations.html">Recommendations</a>
-    <a href="playlists.html">Playlists</a>
     <a href="liked-songs.html">Liked Songs</a>
+    <a href="index.html">Logout</a>
   </nav>
-  <h1>User Profile</h1>
-  <div id="profile"></div>
+  <div class="container">
+    <h1>Profile</h1>
+    <div id="profile"></div>
+  </div>
   <script>
     async function fetchProfile() {
       const response = await fetch('/profile');
       if (response.ok) {
         const profile = await response.json();
-        document.getElementById('profile').innerHTML = `
-          <p><strong>Name:</strong> ${profile.display_name}</p>
-          <p><strong>Email:</strong> ${profile.email}</p>
-          <p><strong>Country:</strong> ${profile.country}</p>
+        const profileDiv = document.getElementById('profile');
+        profileDiv.innerHTML = `
+          <img src="${profile.images[0].url}" alt="${profile.display_name}">
+          <p>Name: ${profile.display_name}</p>
+          <p>Email: ${profile.email}</p>
+          <p>Country: ${profile.country}</p>
         `;
       } else {
         console.error('Failed to fetch profile');

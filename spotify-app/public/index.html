@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spotify App</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; }
-  </style>
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <h1>Welcome to Spotify App</h1>
-  <p>Please log in to view your recommendations, playlists, liked songs, and profile.</p>
-  <button onclick="login()">Login</button>
-
+  <div class="container">
+    <h1>Welcome to Spotify Recommender App</h1>
+    <p>Please log in to view your recommendations, playlists, and liked songs.</p>
+    <button onclick="login()">Login</button>
+  </div>
   <script>
     function login() {
       window.location.href = '/login'; // Redirect to your login route

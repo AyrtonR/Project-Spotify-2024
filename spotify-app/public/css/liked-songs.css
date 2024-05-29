@@ -1,0 +1,25 @@
+.track {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #333333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .track img {
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  .track p {
+    flex: 1;
+    margin: 0;
+    font-size: 1em;
+  }
+  
+  .track .button {
+    margin-left: 10px;
+  }
+  
