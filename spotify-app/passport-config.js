@@ -1,12 +1,10 @@
 const passport = require('passport');
 const SpotifyStrategy = require('passport-spotify').Strategy;
 
-// Serialize user into session
 passport.serializeUser((user, done) => {
   done(null, user);
 });
 
-// Deserialize user from session
 passport.deserializeUser((user, done) => {
   done(null, user);
 });
@@ -17,7 +15,6 @@ passport.use(new SpotifyStrategy({
   callbackURL: 'http://localhost:3000/callback'
 },
 (accessToken, refreshToken, expires_in, profile, done) => {
-  // Store user information in session
   const user = {
     id: profile.id,
     displayName: profile.displayName,

@@ -10,13 +10,12 @@ require('./passport-config');
 
 // Initialize express app
 const app = express();
-const port = process.env.PORT || 3000; // Use PORT from environment variables or default to 3000
+const port = process.env.PORT || 3000; 
 
-// Middleware
-app.use(express.json()); // Parse JSON bodies
+app.use(express.json()); 
 app.use(cookieParserMiddleware);
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your_secret', // Use SESSION_SECRET from environment variables or default to 'your_secret'
+  secret: process.env.SESSION_SECRET || 'your_secret', 
   resave: false,
   saveUninitialized: true
 }));
